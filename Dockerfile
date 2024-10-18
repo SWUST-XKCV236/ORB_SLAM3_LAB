@@ -18,7 +18,7 @@ apt install -y libeigen3-dev libopencv-dev ninja-build       \
 mesa-utils libgl1-mesa-dev libglu1-mesa-dev libegl1-mesa-dev \
 build-essential libx11-dev libeigen3-dev libepoxy-dev        \
 libboost-all-dev openssl libssl-dev libwayland-dev           \
-libpango1.0-dev x11-apps konsole
+x11-apps konsole
 EOF
 
 RUN <<EOF
@@ -63,6 +63,8 @@ exec /lab/ORB_SLAM3/Examples/Monocular-Inertial/mono_inertial_euroc \
 ' >> /lab/run.sh
 chmod +x /lab/run.sh
 EOF
+
+RUN apt install -y libpango1.0-dev
 
 RUN service ssh restart
 
