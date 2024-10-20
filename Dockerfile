@@ -68,6 +68,6 @@ RUN apt install -y libpango1.0-dev
 
 RUN service ssh restart
 
-EXPOSE 22
+EXPOSE 22 8888
 
 CMD ["sleep", "infinity"]
